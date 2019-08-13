@@ -36,7 +36,7 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
+<!--改-->
     <build>
         <finalName>heima_ssm_07_web</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
