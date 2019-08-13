@@ -1,6 +1,7 @@
 package com.itheima.ssm.service.impl;
 
-import com.com.itheima.ssm.domain.Product;
+
+import com.itheima.ssm.Product;
 import com.itheima.ssm.dao.IProductDao;
 import com.itheima.ssm.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,10 @@ public class ProductServiceImpl implements IProductService {
     private IProductDao productDao;
     @Override
     public List<Product> findAll() throws Exception {
-
+        System.out.println("数据取出来了");
         return productDao.findAll();
+
+
     }
     @Override
     public void save(Product product) throws Exception {

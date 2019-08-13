@@ -1,6 +1,6 @@
 package com.itheima.ssm.service;
 
-import com.com.itheima.ssm.domain.Product;
+import com.itheima.ssm.Product;
 import com.sun.glass.ui.Size;
 
 import java.util.List;

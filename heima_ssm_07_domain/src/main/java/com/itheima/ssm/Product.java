@@ -9,29 +9,15 @@ import java.util.Date;
  * @description:
  * @author: wangenxian
  * @create: 2019-07-03 10:44
- *
  **/
 
-public class Product {
-    private String id; // 主键
+public class  Product {
     private String productNum; // 编号 唯一
     private String productName; // 名称
     private String cityName; // 出发城市
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
-    private Date departureTime; // 出发时间
-    private String departureTimeStr;
-    private double productPrice; // 产品价格
+    private int productPrice; // 产品价格
     private String productDesc; // 产品描述
     private Integer productStatus; // 状态 0 关闭 1 开启
-    private String productStatusStr;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getProductNum() {
         return productNum;
@@ -57,29 +43,10 @@ public class Product {
         this.cityName = cityName;
     }
 
-    public Date getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(Date departureTime) {
-        this.departureTime = departureTime;
-    }
-
-    public String getDepartureTimeStr() {
-        return departureTimeStr;
-    }
-
-    public void setDepartureTimeStr(String departureTimeStr) {
-        this.departureTimeStr = departureTimeStr;
-    }
-
     public double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
 
     public String getProductDesc() {
         return productDesc;
@@ -88,6 +55,7 @@ public class Product {
     public void setProductDesc(String productDesc) {
         this.productDesc = productDesc;
     }
+
     public Integer getProductStatus() {
         return productStatus;
     }
@@ -96,19 +64,20 @@ public class Product {
         this.productStatus = productStatus;
     }
 
-    public String getProductStatusStr() {
-        if(productStatus!= null){
-            if(productStatus ==0){
-                productStatusStr ="关闭";
-            }
-            if (productStatus ==1){
-                productStatusStr ="打开";
-            }
-        }
-        return productStatusStr;
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public void setProductStatusStr(String productStatusStr) {
-        this.productStatusStr = productStatusStr;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productNum='" + productNum + '\'' +
+                ", productName='" + productName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", productPrice=" + productPrice +
+                ", productDesc='" + productDesc + '\'' +
+                ", productStatus=" + productStatus +
+                '}';
     }
 }

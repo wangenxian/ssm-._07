@@ -19,10 +19,9 @@ public class OrdersServiceImpl implements IOrdersService {
     private IOrdersDao ordersDao;
 
     @Override
-    public List<Orders> findAll( int page ,int size) throws Exception {
+    public List<Orders> findAll( ) throws Exception {
         //代表在查询时，会帮助我们分页。
-        PageHelper.startPage(page, size);
-        System.out.println("service dao方法执行了");
+        System.out.println("service dao分页方法执行了");
 
         return ordersDao.findAll();
     }

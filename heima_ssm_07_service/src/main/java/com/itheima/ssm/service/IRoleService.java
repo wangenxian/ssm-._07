@@ -1,6 +1,7 @@
 package com.itheima.ssm.service;
 
 import com.com.itheima.ssm.domain.Role;
+import com.com.itheima.ssm.domain.UserInfo;
 
 import java.util.List;
 
@@ -14,4 +15,5 @@ public interface IRoleService {
     List<Role> findAll() throws Exception;
 
     void save(Role role);
+
 }

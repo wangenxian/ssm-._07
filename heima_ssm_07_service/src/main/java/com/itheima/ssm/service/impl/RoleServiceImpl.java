@@ -1,6 +1,7 @@
 package com.itheima.ssm.service.impl;
 
 import com.com.itheima.ssm.domain.Role;
+import com.com.itheima.ssm.domain.UserInfo;
 import com.itheima.ssm.dao.IRoleDao;
 import com.itheima.ssm.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
