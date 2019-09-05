@@ -25,11 +25,11 @@ public class ProductServiceImpl implements IProductService {
     public List<Product> findAll() throws Exception {
         System.out.println("数据取出来了");
         return productDao.findAll();
-
-
     }
     @Override
     public void save(Product product) throws Exception {
+         System.out.println("save方法执行来");
+
          productDao.save(product);
     }
 }

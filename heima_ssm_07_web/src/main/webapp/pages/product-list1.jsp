@@ -196,15 +196,12 @@
                                 <th class="" style="padding-right:0px;">
                                     <input id="selall" type="checkbox" class="icheckbox_square-blue">
                                 </th>
-                                <th class="sorting_asc">ID</th>
-                                <th class="sorting_desc">编号</th>
+                                <th class="sorting_desc">产品编号</th>
                                 <th class="sorting_asc sorting_asc_disabled">产品名称</th>
                                 <th class="sorting_desc sorting_desc_disabled">出发城市</th>
-                                <th class="sorting">出发时间</th>
                                 <th class="text-center sorting">产品价格</th>
                                 <th class="text-center sorting">产品描述</th>
                                 <th class="text-center sorting">状态</th>
-                                <th class="text-center">操作</th>
                             </tr>
                             </thead>
                             <tbody>

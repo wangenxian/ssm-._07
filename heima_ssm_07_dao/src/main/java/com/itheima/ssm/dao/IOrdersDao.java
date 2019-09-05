@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+
 public interface IOrdersDao {
 
 
@@ -19,7 +20,6 @@ public interface IOrdersDao {
             @Result(property = "orderDesc", column = "orderDesc"),
             @Result(property = "payType", column = "payType"),
     })
-
      List<Orders> findAll() throws Exception;
 
 //

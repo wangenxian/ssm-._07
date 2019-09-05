@@ -25,6 +25,7 @@ public class ProductController {
     private IProductService productService;
     @RequestMapping("/findAll")
     public ModelAndView findAll() throws Exception {
+        
         System.out.println("方法执行了");
         ModelAndView mv = new ModelAndView();
         List<Product> ps = productService.findAll();
@@ -35,7 +36,7 @@ public class ProductController {
     @RequestMapping("/save")
     public String save(Product product) throws Exception {
          System.out.println("save方法执行了");
-        productService.save(product);
-        return "redirect:findAll";
+           productService.save(product);
+          return "redirect:findAll";
     }
 }

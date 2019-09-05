@@ -11,6 +11,7 @@ import java.util.Date;
  * @create: 2019-07-03 10:44
  **/
 
+
 public class  Product {
     private String productNum; // 编号 唯一
     private String productName; // 名称

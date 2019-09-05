@@ -21,7 +21,7 @@
     </context:component-scan>
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 配置连接池 -->
-<!--    改-->
+    <!-- 改-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driver}" />
         <property name="jdbcUrl" value="${jdbc.url}" />
@@ -46,17 +46,14 @@
             </array>
         </property>
 
-
-
-
         <!--        -->
-
-<!--        -->
+        <!--        -->
     </bean>
-    <!-- 扫描dao接口 -->
+    <!-- 扫描dao接口 ,配置映射路径-->
     <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.itheima.ssm.dao"/>
     </bean>
+
     <!-- 配置Spring的声明式事务管理 -->
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

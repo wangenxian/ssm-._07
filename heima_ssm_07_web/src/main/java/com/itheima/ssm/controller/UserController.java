@@ -1,7 +1,9 @@
 package com.itheima.ssm.controller;
 
+import com.com.itheima.ssm.domain.Orders;
 import com.com.itheima.ssm.domain.Role;
 import com.com.itheima.ssm.domain.UserInfo;
+import com.github.pagehelper.PageInfo;
 import com.itheima.ssm.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+
 /**
- * @program: heima_ssm_07
+ *  @program: heima_ssm_07
  * @description:
  * @author: wangenxian
  * @create: 2019-07-17 17:16
@@ -26,15 +29,15 @@ public class UserController {
     private IUserService userService;
 
     @RequestMapping("/findAll")
-    public ModelAndView findAll() throws Exception {
-            System.out.println("方法准备执行了");
+    public ModelAndView findAll( @RequestParam(name = "page", required = true, defaultValue = "1") Integer page, @RequestParam(name = "size", required = true, defaultValue = "3") Integer size) throws Exception {
             ModelAndView mv = new ModelAndView();
-            List<UserInfo> users = userService.findAll();
-            mv.addObject("userList",users);
-            System.out.println("方法预备执行了");
+            List<UserInfo> users = userService.findAll(page,size);
+            PageInfo pageInfo = new PageInfo(users);
+            mv.addObject("pageInfo",pageInfo);
+            System.out.println("findAll.do方法执行了");
             mv.setViewName("user-list");
-            System.out.println("方法已经执行了");
             return mv;
+
 
     }
     @RequestMapping("/save")
@@ -48,8 +51,9 @@ public class UserController {
         ModelAndView mv = new ModelAndView();
         UserInfo userInfo = userService.findById(id);
         mv.addObject("user", userInfo);
-        mv.setViewName("user-show1");
+        mv.setViewName("user-show");
         return mv;
+
         //
     }
     //查询用户以及用户可以添加的角色
@@ -59,11 +63,32 @@ public class UserController {
         //1.根据用户id查询用户
         UserInfo userInfo = userService.findById(id);
         //2.根据用户id查询可以添加的角色
-      //  List<Role> otherRoles = userService.findOtherRoles(id);
+        List<Role> otherRoles = userService.findOtherRoles(id);
         mv.addObject("user", userInfo);
-//        mv.addObject("roleList", otherRoles);
-        mv.setViewName("user-role-add");
+        mv.addObject("roleList", otherRoles);
+        mv.setViewName("user-role-add1");
+
         return mv;
+
     }
+    @RequestMapping("/addRoleToUser")
+    public  String  addRoleToUser(@RequestParam(name = "userId",required = true) String userId , @RequestParam(name = "ids" ,required = true) String[] roleIds){
+        userService.addRoleToUser( userId,roleIds);
+
+        return "redirect:findAll";
+    }
+    @RequestMapping("/deleteById")
+
+    public  String  deleteById(@RequestParam(name = "id", required = true) String id){
+
+        int orderId = userService.findOrderId(id);
+        Orders orders = userService.findOrders(orderId);
+        if(orders == null) {
+            userService.deleteById(id);
+            return "redirect:findAll";
+
+        }else
+            return  "error";
+     }
 }
 

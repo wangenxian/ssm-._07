@@ -7,7 +7,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>数据 - AdminLTE2定制版 | Log in</title>
-
 <meta
 	content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
 	name="viewport">
@@ -32,7 +31,6 @@
 		<!-- /.login-logo -->
 		<div class="login-box-body">
 			<p class="login-box-msg">登录系统</p>
-
 			<form action="${pageContext.request.contextPath}/login" method="post">
 				<div class="form-group has-feedback">
 					<input type="text" name="username" class="form-control"

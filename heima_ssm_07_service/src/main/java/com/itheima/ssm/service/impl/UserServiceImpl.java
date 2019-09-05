@@ -1,7 +1,9 @@
 package com.itheima.ssm.service.impl;
 
+import com.com.itheima.ssm.domain.Orders;
 import com.com.itheima.ssm.domain.Role;
 import com.com.itheima.ssm.domain.UserInfo;
+import com.github.pagehelper.PageHelper;
 import com.itheima.ssm.dao.IUserDao;
 import com.itheima.ssm.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +51,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<UserInfo> findAll() throws Exception {
-       return  userDao.findAll();
+    public List<UserInfo> findAll(int page,int size) throws Exception {
+        PageHelper.startPage(page,size);
+        return  userDao.findAll();
     }
 
     @Override
@@ -65,5 +68,27 @@ public class UserServiceImpl implements IUserService {
         return userDao.findOtherRoles(userId);
     }
 
+
+    @Override
+    public void addRoleToUser(String userId, String[] roleIds) {
+
+        for ( String roleId: roleIds) {
+            userDao.addRoleToUser(userId , roleId);
+        }
+    }
+
+    @Override
+    public void deleteById(String id) {
+        userDao.deleteById(id);
+    }
+
+    @Override
+    public Orders findOrders(int id) {
+        return userDao.findOrders(id);
+    }
+    @Override
+    public int findOrderId(String id){
+        return userDao.findOrderId(id);
+    }
 }
 

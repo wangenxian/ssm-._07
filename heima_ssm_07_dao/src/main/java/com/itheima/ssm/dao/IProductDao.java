@@ -17,14 +17,14 @@ import java.util.List;
  **/
 public interface IProductDao {
 
-    @Select("select productNum,productName,cityName,productPrice,productDesc,productStatus from product")
+    @Select("select * from product")
 //    @Results({
 //            @Result(column="productNum", property="studId"),
 //            @Result(column="name", property="name"),
 //            @Result(column="email", property="email"),
 //            @Result(column="addr_id", property="address.addrId"
 //    })
-
+//
     @Results({
             @Result(property = "productNum", column = "productNum"),
             @Result(property = "productName", column = "productName"),
@@ -33,12 +33,13 @@ public interface IProductDao {
             @Result(property = "productDesc", column = "productDesc"),
             @Result(property = "productStatus", column = "productStatus"),
 
+
     })
     public List<Product> findAll() throws Exception;
 
 
-    @Insert("insert into product(productNum,productName,cityName,departureTime,productPrice,productDesc,productStatus) values(#{productNum},#{productName},#{cityName},#{departureTime},#{productPrice},#{productDesc},#{productStatus})")
-    public void save(Product product);
+    @Insert("insert into product(productNum,productName,cityName,productPrice,productDesc,productStatus) values(#{productNum},#{productName},#{cityName},#{productPrice},#{productDesc},#{productStatus})")
 
+            public void save(Product product);
 
 }

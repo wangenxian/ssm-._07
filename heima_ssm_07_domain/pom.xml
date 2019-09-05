@@ -8,7 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
 <!--改-->
+
     <artifactId>heima_ssm_07_domain</artifactId>
     <dependencies>
         <dependency>
@@ -18,6 +20,5 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
 
 </project>

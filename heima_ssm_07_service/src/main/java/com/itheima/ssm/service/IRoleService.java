@@ -1,5 +1,6 @@
 package com.itheima.ssm.service;
 
+import com.com.itheima.ssm.domain.Permission;
 import com.com.itheima.ssm.domain.Role;
 import com.com.itheima.ssm.domain.UserInfo;
 
@@ -15,5 +16,11 @@ public interface IRoleService {
     List<Role> findAll() throws Exception;
 
     void save(Role role);
+
+    Role findById(String roleId);
+
+    List<Permission> findOtherPermissions(String roleId);
+
+    void addPermissionToRole(String roleId, String[] permissionIds);
 
 }
