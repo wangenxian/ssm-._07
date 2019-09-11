@@ -11,11 +11,7 @@
 <!--改-->
     <artifactId>heima_ssm_07_dao</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>com.itheima.heima_ssm_02</groupId>
-            <artifactId>heima_ssm_02_domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
         <dependency>
             <groupId>heima_ssm_07</groupId>
             <artifactId>heima_ssm_07_domain</artifactId>

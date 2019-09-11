@@ -148,7 +148,7 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<!-- 页面头部 /-->
 		<!-- 导航侧栏 -->
-		<jsp:include page="aside.jsp"></jsp:include>
+		<jsp:include page="aside_01.jsp"></jsp:include>
 		<!-- 导航侧栏 /-->
 
 		<!-- 内容区域 -->
@@ -229,8 +229,8 @@
 										<th class="sorting_asc sorting_asc_disabled">产品名称</th>
 										<th class="sorting_desc sorting_desc_disabled">金额</th>
 										<th class="sorting">下单时间</th>
-										<th class="text-center sorting">订单状态</th>
-										<th class="text-center">操作</th>
+										<th class="sorting">产品数量</th>
+										<th class="sorting">总金额</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -242,14 +242,14 @@
 											<td><input name="ids" type="checkbox"></td>
 											<td>${orders.id }</td>
 											<td>${orders.orderNum }</td>
-											<td>${orders.product.productName }</td>
-											<td>${orders.product.productPrice }</td>
-											<td>${orders.orderTimeStr }</td>
-											<td class="text-center">${orders.orderStatusStr }</td>
+											<td>${orders.orderName}</td>
+											<td>${orders.money}</td>
+											<td>${orders.orderTime }</td>
+											<td >${orders.order_count }</td>
+											<td >${orders.order_count } * ${orders.money}</td>
 											<td class="text-center">
-												<button type="button" class="btn bg-olive btn-xs">订单</button>
 												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">详情</button>
-												<button type="button" class="btn bg-olive btn-xs">编辑</button>
+												<button type="button" class="btn bg-olive btn-xs">删除</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -267,41 +267,9 @@
 							</table>
 							<!--数据列表/-->
 
-							<!--工具栏-->
-							<div class="pull-left">
-								<div class="form-group form-inline">
-									<div class="btn-group">
-										<button type="button" class="btn btn-default" title="新建">
-											<i class="fa fa-file-o"></i> 新建
-										</button>
-										<button type="button" class="btn btn-default" title="删除">
-											<i class="fa fa-trash-o"></i> 删除
-										</button>
-										<button type="button" class="btn btn-default" title="开启">
-											<i class="fa fa-check"></i> 开启
-										</button>
-										<button type="button" class="btn btn-default" title="屏蔽">
-											<i class="fa fa-ban"></i> 屏蔽
-										</button>
-										<button type="button" class="btn btn-default" title="刷新">
-											<i class="fa fa-refresh"></i> 刷新
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="box-tools pull-right">
-								<div class="has-feedback">
-									<input type="text" class="form-control input-sm"
-										placeholder="搜索"> <span
-										class="glyphicon glyphicon-search form-control-feedback"></span>
-								</div>
-							</div>
 							<!--工具栏/-->
-
 						</div>
 						<!-- 数据表格 /-->
-
-
 					</div>
 					<!-- /.box-body -->
 

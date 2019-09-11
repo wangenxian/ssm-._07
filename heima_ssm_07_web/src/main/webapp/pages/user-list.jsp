@@ -70,7 +70,7 @@
 		<!-- 页面头部 /-->
 
 		<!-- 导航侧栏 -->
-		<jsp:include page="aside.jsp"></jsp:include>
+		<jsp:include page="aside_01.jsp"></jsp:include>
 		<!-- 导航侧栏 /-->
 
 		<!-- 内容区域 -->
@@ -139,7 +139,6 @@
 										<th class="sorting_desc">用户名</th>
 										<th class="sorting_asc sorting_asc_disabled">邮箱</th>
 										<th class="sorting_desc sorting_desc_disabled">联系电话</th>
-										<th class="sorting">状态</th>
 										<th class="text-center">操作</th>
 									</tr>
 								</thead>
@@ -151,9 +150,9 @@
 											<td>${user.username }</td>
 											<td>${user.email }</td>
 											<td>${user.phoneNum }</td>
-											<td>${user.statusStr }</td>
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/user/findById?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
+<%--												<a href="${pageContext.request.contextPath}/user/findById?id=${user.id}" class="btn bg-olive btn-xs">客户角色详情</a>--%>
+												<a href="${pageContext.request.contextPath}/user/findUserById?id=${user.id}" class="btn bg-olive btn-xs">信息编辑</a>
 												<a href="${pageContext.request.contextPath}/user/deleteById?id=${user.id}" class="btn bg-olive btn-xs">删除用户</a>
 												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole?id=${user.id}" class="btn bg-olive btn-xs">添加角色</a>
 											</td>

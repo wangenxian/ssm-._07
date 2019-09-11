@@ -1,13 +1,14 @@
 package com.itheima.ssm.dao;
 
-import com.com.itheima.ssm.domain.Orders;
-import com.com.itheima.ssm.domain.Role;
-import com.com.itheima.ssm.domain.UserInfo;
+import com.itheima.ssm.Orders;
+import com.itheima.ssm.Role;
+import com.itheima.ssm.UserInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 public interface IUserDao {
+
 
     @Select("select * from users where username=#{username}")
     @Results({
@@ -43,6 +44,7 @@ public interface IUserDao {
     @Select("select * from role where id not in (select roleId from users_role where userId=#{userId})")
     List<Role> findOtherRoles(String userId);
 
+
     @Insert("insert into users_role(userId,roleId) values(#{userId},#{roleId})")
     void addRoleToUser(@Param("userId") String userId, @Param("roleId") String roleId);
 
@@ -54,4 +56,15 @@ public interface IUserDao {
 
     @Select("select orderId  from users where id =#{id}")
     int findOrderId(String id);
+
+    @Update("UPDATE users SET  email = #{userInfo.email} , username = #{userInfo.username} ,password = #{userInfo.password} ,phoneNum =#{userInfo.phoneNum} WHERE id = #{userInfo.id}")
+//    @Results({
+//            @Result(property = "username", column = "username"),
+//            @Result(property = "email", column = "email"),
+//            @Result(property = "password", column = "password"),
+//            @Result(property = "phoneNum", column = "phoneNum"),
+//    })
+    void updateById(@Param(value = "userId") String userId,@Param(value = "userInfo") UserInfo userInfo);
+
+
 }

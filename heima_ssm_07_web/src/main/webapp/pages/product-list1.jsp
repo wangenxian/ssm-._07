@@ -122,7 +122,7 @@
     <!-- 页面头部 /-->
 
     <!-- 导航侧栏 -->
-    <jsp:include page="aside.jsp"></jsp:include>
+    <jsp:include page="aside_01.jsp"></jsp:include>
     <!-- 导航侧栏 /-->
 
     <!-- 内容区域 -->
@@ -207,9 +207,9 @@
                             <tbody>
                             <c:forEach var="product" items="${productList}">
                             <tr>
-<%--                                <td><input name="ids" type="checkbox"></td>--%>
-                                <td>${product.productNum}
-                                </td>
+<%--                            <td><input name="ids" type="checkbox"></td>--%>
+                                <td> </td>
+                                <td>${product.productNum}</td>
                                 <td>${product.productName}</td>
                                 <td>${product.cityName}</td>
                                 <td class="text-center">${product.productPrice}</td>
@@ -217,10 +217,9 @@
                                 <td class="text-center">
                                     <button type="button" class="btn bg-olive btn-xs">订单</button>
                                     <button type="button" class="btn bg-olive btn-xs">详情</button>
-                                    <button type="button" class="btn bg-olive btn-xs">编辑</button>
+                                    <a type="button" href="${pageContext.request.contextPath}/product/findProductById?productNum=${product.productNum}"     class="btn bg-olive btn-xs">编辑</a>
                                 </td>
                             </tr>
-
                             </c:forEach>
 
                             </tbody>

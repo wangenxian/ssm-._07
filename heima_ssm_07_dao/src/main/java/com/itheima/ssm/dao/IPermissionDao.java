@@ -1,6 +1,6 @@
 package com.itheima.ssm.dao;
 
-import com.com.itheima.ssm.domain.Permission;
+import com.itheima.ssm.Permission;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;

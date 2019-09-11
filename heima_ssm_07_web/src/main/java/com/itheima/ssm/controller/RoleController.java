@@ -1,9 +1,8 @@
 package com.itheima.ssm.controller;
 
 
-import com.com.itheima.ssm.domain.Permission;
-import com.com.itheima.ssm.domain.Role;
-import com.com.itheima.ssm.domain.UserInfo;
+import com.itheima.ssm.Permission;
+import com.itheima.ssm.Role;
 import com.itheima.ssm.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

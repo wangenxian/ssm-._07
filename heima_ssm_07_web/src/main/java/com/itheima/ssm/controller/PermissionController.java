@@ -1,6 +1,6 @@
 package com.itheima.ssm.controller;
 
-import com.com.itheima.ssm.domain.Permission;
+import com.itheima.ssm.Permission;
 import com.itheima.ssm.service.IPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

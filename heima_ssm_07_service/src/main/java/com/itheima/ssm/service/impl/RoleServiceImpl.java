@@ -1,8 +1,7 @@
 package com.itheima.ssm.service.impl;
 
-import com.com.itheima.ssm.domain.Permission;
-import com.com.itheima.ssm.domain.Role;
-import com.com.itheima.ssm.domain.UserInfo;
+import com.itheima.ssm.Permission;
+import com.itheima.ssm.Role;
 import com.itheima.ssm.dao.IRoleDao;
 import com.itheima.ssm.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +23,13 @@ public class RoleServiceImpl implements IRoleService {
     }
 
     @Override
-    public List<Role> findAll() throws Exception {
+    public List<com.itheima.ssm.Role> findAll() throws Exception {
         return roleDao.findAll();
 
     }
 
     @Override
-    public Role findById(String roleId) {
+    public com.itheima.ssm.Role findById(String roleId) {
         return roleDao.findById(roleId);
     }
     

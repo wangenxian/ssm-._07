@@ -1,6 +1,6 @@
 package com.itheima.ssm.service.impl;
 
-import com.com.itheima.ssm.domain.Permission;
+import com.itheima.ssm.Permission;
 import com.itheima.ssm.dao.IPermissionDao;
 import com.itheima.ssm.service.IPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;

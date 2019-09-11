@@ -21,9 +21,9 @@ public class SysLogController {
     public ModelAndView findAll() throws Exception {
         System.out.println("切面方法执行了");
         ModelAndView mv=new ModelAndView();
-       List<SysLog> sysLogList= sysLogService.findAll();
-       mv.addObject("sysLogs",sysLogList);
-       mv.setViewName("syslog-list");
+        List<SysLog> sysLogList= sysLogService.findAll();
+        mv.addObject("sysLogs",sysLogList);
+        mv.setViewName("syslog-list");
         return mv;
     }
 }

@@ -32,13 +32,14 @@ public class LogAop {
     private Method method;//访问的方法
 
     //前置通知  主要是获取开始时间，执行的类是哪一个，执行的是哪一个方法
-    @Before("execution(* com.itheima.ssm.controller.*.*(..))")
-    public void doBefore(JoinPoint jp) throws NoSuchMethodException {
+      @Before("execution(* com.itheima.ssm.controller.*.*(..))")
+      public void doBefore(JoinPoint jp) throws NoSuchMethodException {
 
         visitTime = new Date();//当前时间就是开始访问的时间
         clazz = jp.getTarget().getClass(); //具体要访问的类
         String methodName = jp.getSignature().getName(); //获取访问的方法的名称
-        Object[] args = jp.getArgs();//获取访问的方法的参数
+        Object[] args = jp.getArgs();//获取访问的方法的参数.
+
 
         //获取具体执行的方法的Method对象
         if (args == null || args.length == 0) {
@@ -84,7 +85,7 @@ public class LogAop {
                     sysLog.setIp(ip);
                     sysLog.setMethod("[类名] " + clazz.getName() + "[方法名] " + method.getName());
                     sysLog.setUrl(url);
-//                    sysLog.setUsername(username);
+//                  sysLog.setUsername(username);
                     sysLog.setVisitTime(visitTime);
                     //调用Service完成操作
                     sysLogService.save(sysLog);

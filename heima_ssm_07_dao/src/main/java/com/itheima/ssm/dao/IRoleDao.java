@@ -1,8 +1,8 @@
 package com.itheima.ssm.dao;
 
 
-import com.com.itheima.ssm.domain.Permission;
-import com.com.itheima.ssm.domain.Role;
+import com.itheima.ssm.Permission;
+import com.itheima.ssm.Role;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -45,4 +45,5 @@ public interface IRoleDao {
 
     @Select("select * from permission where id not in (select permissionId from role_permission where roleId=#{roleId})")
     List<Permission> findOtherPermissions(String roleId);
+
 }

@@ -23,11 +23,15 @@
 				href="${pageContext.request.contextPath}/pages/main.jsp"><i
 					class="fa fa-dashboard"></i> <span>首页</span></a></li>
 
-			<li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
-					<span>系统管理</span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
-				</span>
+			<li class="treeview"> <i class="fa fa-cogs"></i>
+<%--					<span>系统管理</span> <span class="pull-right-container"> <i--%>
+<%--						class="fa fa-angle-left pull-right"></i>--%>
+<%--				</span>--%>
 
+            <li id="system-setting"><a
+                    href="${pageContext.request.contextPath}/user/findAll"> <i
+                    class="fa fa-circle-o"></i> 客户管理
+            </a></li>
 
 			</a>
 				<ul class="treeview-menu">
@@ -50,23 +54,30 @@
 					</a></li>
 				</ul></li>
 
-			<li class="treeview"><a href="#"> <i class="fa fa-cube"></i>
-					<span>基础数据</span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
-				</span>
-			</a>
+<%--			<li class="treeview"><a href="#"> <i class="fa fa-cube"></i>--%>
+<%--					<span>基础数据</span> <span class="pull-right-container"> <i--%>
+<%--						class="fa fa-angle-left pull-right"></i>--%>
+<%--				</span>--%>
+<%--			</a>--%>
+<%--				<ul class="treeview-menu">--%>
+<%--					<li id="system-setting"><a--%>
+<%--						href="${pageContext.request.contextPath}/product/findAll">--%>
+<%--							<i class="fa fa-circle-o"></i> 产品管理--%>
+<%--					</a></li>--%>
+<%--					<li id="system-setting"><a--%>
+<%--						href="${pageContext.request.contextPath}/orders/findAll"> <i--%>
+<%--							class="fa fa-circle-o"></i> 订单管理--%>
+<%--					</a></li>--%>
+<%--				</ul></li>--%>
 
-				<ul class="treeview-menu">
-					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/product/findAll">
-							<i class="fa fa-circle-o"></i> 产品管理
-					</a></li>
-					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/orders/findAll"> <i
-							class="fa fa-circle-o"></i> 订单管理
-					</a></li>
-
-				</ul></li>
+            <li id="system-setting"><a
+                    href="${pageContext.request.contextPath}/product/findAll">
+                <i class="fa fa-cube"></i> 产品管理
+            </a></li>
+            <li id="system-setting"><a
+                    href="${pageContext.request.contextPath}/orders/findAll"> <i
+                    class="fa fa-cube"></i> 订单管理
+            </a></li>
 
 		</ul>
 	</section>

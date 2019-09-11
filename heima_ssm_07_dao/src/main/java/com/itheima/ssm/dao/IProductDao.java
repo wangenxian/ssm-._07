@@ -1,11 +1,7 @@
 package com.itheima.ssm.dao;
 
 import com.itheima.ssm.Product;
-import org.apache.ibatis.annotations.Insert;
-
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,12 +22,12 @@ public interface IProductDao {
 //    })
 //
     @Results({
-            @Result(property = "productNum", column = "productNum"),
-            @Result(property = "productName", column = "productName"),
-            @Result(property = "cityName", column = "cityName"),
-            @Result(property = "productPrice", column = "productPrice"),
-            @Result(property = "productDesc", column = "productDesc"),
-            @Result(property = "productStatus", column = "productStatus"),
+            @Result(property = "productNum", column = "product_num"),
+            @Result(property = "productName", column = "product_name"),
+            @Result(property = "cityName", column = "city_name"),
+            @Result(property = "productPrice", column = "product_price"),
+            @Result(property = "productDesc", column = "product_desc"),
+            @Result(property = "productStatus", column = "product_status"),
 
 
     })
@@ -42,4 +38,24 @@ public interface IProductDao {
 
             public void save(Product product);
 
+    @Select("select * from product where product_num = #{productNum}")
+
+    @Results({
+            @Result(property = "productNum", column = "product_num"),
+            @Result(property = "productName", column = "product_name"),
+            @Result(property = "cityName", column = "city_name"),
+            @Result(property = "productPrice", column = "product_price"),
+            @Result(property = "productDesc", column = "product_desc"),
+            @Result(property = "productStatus", column = "product_status"),
+
+    })
+            Product findProductById(@Param( value = "productNum") String productNum);
+
+    @Update("UPDATE  product set  product_name = #{product.productName} ,product_price = #{product.productPrice} WHERE product_num = #{productNum}")
+//    @Results({
+//            @Result(property = "productNum", column = "product_num"),
+//            @Result(property = "productName", column = "product_name"),
+//            @Result(property = "productPrice", column = "product_price"),
+//    })
+    void updateByNum(@Param( value = "productNum") String productNum, @Param(value = "product") Product product);
 }

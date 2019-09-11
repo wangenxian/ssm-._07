@@ -1,7 +1,6 @@
 package com.itheima.ssm.service;
 
 import com.itheima.ssm.Product;
-import com.sun.glass.ui.Size;
 
 import java.util.List;
 
@@ -17,5 +16,9 @@ public interface IProductService {
 
     public  void  save(Product product) throws Exception;
 
+
+    Product findProductById(String productNum);
+
+    void updateByNum(String productNum,Product product);
 
 }

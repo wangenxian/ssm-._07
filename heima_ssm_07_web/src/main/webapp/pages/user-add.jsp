@@ -70,7 +70,7 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<!-- 页面头部 /-->
 		<!-- 导航侧栏 -->
-		<jsp:include page="aside.jsp"></jsp:include>
+		<jsp:include page="aside_01.jsp"></jsp:include>
 		<!-- 导航侧栏 /-->
 
 		<!-- 内容区域 -->
@@ -91,7 +91,7 @@
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/user/save"
+			<form action="${pageContext.request.contextPath}/product/updateByNum"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->

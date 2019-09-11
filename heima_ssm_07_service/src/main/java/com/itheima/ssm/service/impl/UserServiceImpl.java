@@ -1,9 +1,9 @@
 package com.itheima.ssm.service.impl;
 
-import com.com.itheima.ssm.domain.Orders;
-import com.com.itheima.ssm.domain.Role;
-import com.com.itheima.ssm.domain.UserInfo;
 import com.github.pagehelper.PageHelper;
+import com.itheima.ssm.Orders;
+import com.itheima.ssm.Role;
+import com.itheima.ssm.UserInfo;
 import com.itheima.ssm.dao.IUserDao;
 import com.itheima.ssm.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +36,7 @@ public class UserServiceImpl implements IUserService {
             e.printStackTrace();
         };
          User user = new User(userInfo.getUsername(),userInfo.getPassword(),getGrantedAuthority());
+
         return user;
     }
     public List<SimpleGrantedAuthority> getGrantedAuthority(){
@@ -89,6 +90,12 @@ public class UserServiceImpl implements IUserService {
     @Override
     public int findOrderId(String id){
         return userDao.findOrderId(id);
+    }
+
+    @Override
+    public void updateById(String userId,UserInfo userInfo) {
+        System.out.println("impl方法执行了");
+        userDao.updateById(userId,userInfo);
     }
 }
 

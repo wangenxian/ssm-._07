@@ -47,7 +47,6 @@
         </property>
 
         <!--        -->
-        <!--        -->
     </bean>
     <!-- 扫描dao接口 ,配置映射路径-->
     <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">

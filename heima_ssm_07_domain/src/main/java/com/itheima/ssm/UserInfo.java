@@ -13,6 +13,8 @@ public class UserInfo {
     private String phoneNum;
     private int status;
     private int roleid;
+    private  List<Role> roles;
+
 
     public int getId() {
         return id;
@@ -68,5 +70,13 @@ public class UserInfo {
 
     public void setRoleid(int roleid) {
         this.roleid = roleid;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

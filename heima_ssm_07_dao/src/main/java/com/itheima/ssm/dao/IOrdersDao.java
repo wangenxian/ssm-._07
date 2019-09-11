@@ -1,6 +1,6 @@
 package com.itheima.ssm.dao;
 
-import com.com.itheima.ssm.domain.Orders;
+import com.itheima.ssm.Orders;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -10,15 +10,14 @@ import java.util.List;
 
 public interface IOrdersDao {
 
-
     @Select("select * from orders")
     @Results({
             @Result(id = true, property = "id", column = "id"),
-            @Result(property = "orderNum", column = "orderNum"),
-            @Result(property = "orderTime", column = "orderTime"),
-            @Result(property = "peopleCount", column = "peopleCount"),
-            @Result(property = "orderDesc", column = "orderDesc"),
-            @Result(property = "payType", column = "payType"),
+            @Result(property = "orderNum", column = "order_num"),
+            @Result(property = "orderTime", column = "order_time"),
+            @Result(property = "orderDesc", column = "order_desc"),
+            @Result(property = "orderName", column = "order_name"),
+            @Result(property = "money", column = "money"),
     })
      List<Orders> findAll() throws Exception;
 
